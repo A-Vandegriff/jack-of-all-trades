@@ -1,0 +1,2 @@
+set up WSL in cursor so now I can navigate my files and folders through linux which should make development easier and efficient.
+
