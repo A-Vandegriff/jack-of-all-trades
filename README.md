@@ -1,4 +1,4 @@
-#Jack-of-All-Trades
+#Jack of All Trades
 
 Jack of All Trades is a web app designed to help you explore new skills, track your progress, and level up through achievements. Whether you’re learning programming, cooking, or juggling, the app lets you:
 
