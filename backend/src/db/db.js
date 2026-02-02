@@ -1,12 +1,22 @@
 // test-db.js
-import "dotenv/config";
+import dotenv from "dotenv";
 import pg from "pg";
+import path from "path";
+
+dotenv.config({ path: path.resolve("/home/av/projects/jack-of-all-trades/backend/.env") });
 
 const { Pool } = pg;
 
 // Create a new connection pool
-const pool = new Pool();
+const pool = new Pool({
+	host: process.env.PGHOST,
+	port: Number(process.env.PGPORT),
+	database: process.env.PGDATABASE,
+	user: process.env.PGUSER,
+	password: process.env.PGPASSWORD,
 
+});
+console.log("PGPASSWORD:", process.env.PGPASSWORD);
 async function testConnection() {
   try {
     // Run a simple query
