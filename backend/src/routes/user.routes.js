@@ -4,9 +4,20 @@ import pool from "../db/db.js";
 const router = Router();
 
 router.get("/", async (req, res) => {
-	const result = await pool.query(
-		"SELECT id, username, created_at FROM users ORDER BY is ASC"
-	);
+	 try {
+        const result = await pool.query(
+            `SELECT users_id AS id, 
+	     username,
+	     created_at AS "CreatedAT"
+  	     FROM users 
+	     ORDER BY users_id ASC`
+        );
+
+        res.json(result.rows);
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ error: err.message });
+    }
 
 });
 export default router;

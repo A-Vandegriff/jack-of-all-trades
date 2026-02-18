@@ -28,9 +28,6 @@ async function testConnection() {
     console.log("Server time:", res.rows[0].current_time);
   } catch (err) {
     console.error("❌ Connection failed:", err.message);
-  } finally {
-    // Close the pool
-    await pool.end();
   }
 }
 
