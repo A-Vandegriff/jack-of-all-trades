@@ -8,6 +8,9 @@ dotenv.config({ path: path.resolve("/home/av/projects/jack-of-all-trades/backend
 const { Pool } = pg;
 
 // Create a new connection pool
+// A pool is very important and should be reuseable
+// it works as a connection key for other directories,
+// a doorman by Queuing requests, and a traffic controller
 const pool = new Pool({
 	host: process.env.PGHOST,
 	port: Number(process.env.PGPORT),
@@ -33,4 +36,4 @@ async function testConnection() {
 
 // Run the test
 testConnection();
-
+export default pool;
