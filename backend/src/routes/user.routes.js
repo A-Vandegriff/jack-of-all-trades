@@ -9,7 +9,7 @@ router.get("/", async (req, res) => {
             `SELECT users_id AS id, 
 	     username,
 	     created_at AS "CreatedAT"
-  	     FROM users 
+  	     FROM users
 	     ORDER BY users_id ASC`
         );
 

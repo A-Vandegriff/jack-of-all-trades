@@ -1,5 +1,5 @@
-import { Router } from 'express';
-import pool from '../db/db.js';
+import { Router } from "express";
+import pool from "../db/db.js";
 
 const router = Router();
 
@@ -7,8 +7,8 @@ router.get("/", async (req,res) => {
 	try {
 	const result = await pool.query(
 		`SELECT skills_id AS id,
-		name,
-		 FROM skills
+		name
+	        FROM skills
 		ORDER BY skills_id ASC`
 	);
 	res.json(result.rows);
@@ -18,3 +18,4 @@ router.get("/", async (req,res) => {
 	}
 });
 export default router;
+
